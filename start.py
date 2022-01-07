@@ -23,6 +23,10 @@ COMMANDS = {
         'function': server.news_SportBox,
         'description': 'Команда для получения новостей с сайта SportBox.'
     },
+    'НовостиSportExpress': {
+        'function': server.news_SportExpress,
+        'description': 'Команда для получения новостей с сайта SportBox.'
+    },
 }
 
 while True:
