@@ -31,6 +31,8 @@ class Server:
         keyboard.add_button(label='НовостиSportBox', color=VkKeyboardColor.POSITIVE)
         keyboard.add_line()
         keyboard.add_button(label='НовостиSportExpress', color=VkKeyboardColor.POSITIVE)
+        keyboard.add_line()
+        keyboard.add_button(label='Всероссийская федерация плавания', color=VkKeyboardColor.POSITIVE)
 
         help_text = [f'👉 {value}: {self.commands[value]["description"]}' for number_iteration, value in
                      enumerate(self.commands.keys())]
@@ -55,6 +57,14 @@ class Server:
             msg = "SportExpress\n\n"
             for news in self.sportexpress.parse():
                 msg += f"🏊‍♂🏊‍♀{news['title']} {news['url']}\n\n"
+            self.vk.messages.send(
+                message=msg,
+                peer_id=user_id,
+                random_id=get_random_id()
+            )
+    def AllRussian_Swimming_Federation(self, user_id):
+            msg = "All-Russian Swimming Federation\n\n"
+            msg += 'https://russwimming.ru/'
             self.vk.messages.send(
                 message=msg,
                 peer_id=user_id,

@@ -20,6 +20,7 @@ class SportBox:
                 'title': item.get_text(),
                 'url': self.__host + item.get('href')
             })
+        print(card)
         return card
 
     def __get_html(self, params={}):
