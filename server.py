@@ -63,10 +63,9 @@ class Server:
                 random_id=get_random_id()
             )
     def AllRussian_Swimming_Federation(self, user_id):
-            msg = "All-Russian Swimming Federation\n\n"
-            msg += 'https://russwimming.ru/'
+            # msg = "All-Russian Swimming Federation\n\n"
             self.vk.messages.send(
-                message=msg,
+                message='https://russwimming.ru/',
                 peer_id=user_id,
                 random_id=get_random_id()
             )
