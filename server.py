@@ -29,10 +29,12 @@ class Server:
     def command_help(self, user_id):
         keyboard = VkKeyboard()
         keyboard.add_button(label='НовостиSportBox', color=VkKeyboardColor.POSITIVE)
+        keyboard.add_button(label='Ссылка на новостиSportBox', color=VkKeyboardColor.PRIMARY)
         keyboard.add_line()
         keyboard.add_button(label='НовостиSportExpress', color=VkKeyboardColor.POSITIVE)
+        keyboard.add_button(label='Ссылка на новостиSportExpress', color=VkKeyboardColor.PRIMARY)
         keyboard.add_line()
-        keyboard.add_button(label='Всероссийская федерация плавания', color=VkKeyboardColor.POSITIVE)
+        keyboard.add_button(label='Всероссийская федерация плавания', color=VkKeyboardColor.PRIMARY)
 
         help_text = [f'👉 {value}: {self.commands[value]["description"]}' for number_iteration, value in
                      enumerate(self.commands.keys())]
@@ -53,12 +55,26 @@ class Server:
                 peer_id=user_id,
                 random_id=get_random_id()
             )
+    def All_news_Sport_Box(self, user_id):
+            msg = "All_news_Sport_Box\n\n"
+            msg += self.vk.messages.send(
+                message='https://news.sportbox.ru/Vidy_sporta/plavanie',
+                peer_id=user_id,
+                random_id=get_random_id()
+            )
     def news_SportExpress(self, user_id):
             msg = "SportExpress\n\n"
             for news in self.sportexpress.parse():
                 msg += f"🏊‍♂🏊‍♀{news['title']} {news['url']}\n\n"
             self.vk.messages.send(
                 message=msg,
+                peer_id=user_id,
+                random_id=get_random_id()
+            )
+    def All_news_Sport_Express(self, user_id):
+            msg = "All_news_Sport_Express\n\n"
+            msg += self.vk.messages.send(
+                message='https://www.sport-express.ru/swimming/',
                 peer_id=user_id,
                 random_id=get_random_id()
             )

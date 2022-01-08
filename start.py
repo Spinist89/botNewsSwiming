@@ -23,8 +23,16 @@ COMMANDS = {
         'function': server.news_SportBox,
         'description': 'Команда для получения новостей с сайта SportBox.'
     },
+    'Ссылка на новостиSportBox': {
+        'function': server.All_news_Sport_Box,
+        'description': 'Команда для получения новостей с сайта SportBox.'
+    },
     'НовостиSportExpress': {
         'function': server.news_SportExpress,
+        'description': 'Команда для получения новостей с сайта SportBox.'
+    },
+    'Ссылка на новостиSportExpress': {
+        'function': server.All_news_Sport_Express,
         'description': 'Команда для получения новостей с сайта SportBox.'
     },
     'Всероссийская федерация плавания': {
