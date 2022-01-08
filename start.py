@@ -27,6 +27,10 @@ COMMANDS = {
         'function': server.news_SportExpress,
         'description': 'Команда для получения новостей с сайта SportBox.'
     },
+    'Всероссийская федерация плавания': {
+        'function': server.AllRussian_Swimming_Federation,
+        'description': 'Команда для перехода на сайт ВФП.'
+    },
 }
 
 while True:
