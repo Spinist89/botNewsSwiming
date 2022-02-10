@@ -4,7 +4,7 @@ from vk_api.utils import get_random_id
 from parserSportBox import *
 from parserSportExpress import *
 
-
+# !
 class Server:
     def __init__(self, longpoll, vk):
         self.__longpoll = longpoll
